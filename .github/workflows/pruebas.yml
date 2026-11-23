@@ -42,6 +42,12 @@ jobs:
       - name: Instalar Vercel CLI
         run: npm install --global vercel@latest
 
+      - name: Verificar conexion con Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel whoami
+
+
       - name: Obtener configuración de Vercel
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
