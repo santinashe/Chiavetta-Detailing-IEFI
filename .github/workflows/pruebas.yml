@@ -53,8 +53,9 @@ jobs:
           echo '{"orgId":"${{ secrets.VERCEL_ORG_ID }}","projectId":"${{ secrets.VERCEL_PROJECT_ID }}"}' > .vercel/project.json
 
 
+      
       - name: Obtener configuración de Vercel
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --scope=milkivelas
+        run: vercel pull --yes --environment=production --project=chiavetta-detailing-iefi --scope=milkivelas --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Preparar publicación
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
