@@ -47,6 +47,12 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: vercel whoami
 
+      - name: Vincular proyecto de Vercel
+        run: |
+          mkdir -p .vercel
+          echo '{"orgId":"${{ secrets.VERCEL_ORG_ID }}","projectId":"${{ secrets.VERCEL_PROJECT_ID }}"}' > .vercel/project.json
+
+
       - name: Obtener configuración de Vercel
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --scope=milkivelas
 
