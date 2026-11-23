@@ -1,0 +1,25 @@
+CHIAVETTA DETAILING – PRIMERA CORRECCIÓN DEL IEFI
+
+Origen: carpeta santino-chiavetta/TP4 del ZIP enviado.
+Cambios realizados:
+1. Los productos ahora se cargan con fetch() desde recursos/productos.json.
+2. datos.js y validaciones.js exportan funciones; app.js las importa (ESModules).
+3. Todas las páginas cargan app.js con <script type="module">.
+4. Se corrigió el identificador en el enlace del Kit de Mantenimiento de Interior.
+5. Se preservó la estructura y el diseño CSS originales.
+
+PRUEBA: ejecutar con un servidor HTTP (no abrir con file://).
+Desde la carpeta del proyecto: python -m http.server 8000
+Visitar: http://localhost:8000/productos.html
+Verificar búsqueda, filtros, agregado al carrito y detalle de productos.
+
+ETAPA 2 – WHATSAPP
+- Número configurado: +54 9 351 309 0597.
+- En Revisar compra, el botón prepara un mensaje con productos, cantidades y total.
+- Se abre WhatsApp; el cliente debe presionar Enviar. No hay envío silencioso ni confirmación automática.
+- El carrito no se borra al abrir WhatsApp, por si el cliente cancela.
+- Se mantienen los import/export de datos.js y validaciones.js hacia app.js.
+
+PENDIENTE: publicar, verificar en navegador y configurar CI/CD con pruebas unitarias.
+NOTA: el cálculo de impuesto de ejemplo ya existía en el TP original, no representa un cobro/impuesto real.
+
